@@ -12,9 +12,12 @@ source "$dotfiles/functions.sh"
 # source fonts.sh
 # source git.sh
 source "$dotfiles/zsh.sh"
+
+# Programming
 source "$dotfiles/vim.sh"
 source "$dotfiles/ruby.sh"
 source "$dotfiles/clojure.sh"
+brew_package cloc
 
 # Common Apps
 cask_package google-chrome
