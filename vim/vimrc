@@ -1,0 +1,101 @@
+" enable vim features instead of strict vi compatibility
+set nocompatible
+
+" have the mouse enabled all the time
+set mouse=a
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Types
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" filetype detection
+filetype on
+
+" enable loading the plugin file for specific file types
+filetype plugin on
+
+" enable loading the indent file for specific file types
+filetype indent on
+
+" Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+" JSON is JS
+au BufNewFile,BufRead *.json set ai filetype=javascript 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Display
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" font
+set guifont=Roboto\ Mono\ for\ Powerline:h14
+
+" line numbers
+set number numberwidth=2
+
+" do not wrap
+set nowrap
+
+" syntax highlighting
+syntax on
+colorscheme peaksea_contrast
+
+" highlight matching brackets
+set showmatch
+
+" scroll the window when we get near the edge
+set scrolloff=4 sidescrolloff=10
+
+" show current line info (current/total)
+set ruler rulerformat=%=%l/%L
+
+" highlight trailing whitespace
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set list
+
+" disable folding
+set nofoldenable
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indenting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use 2 spaces for tabs
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set smarttab
+
+" match indentation of previous line
+set autoindent
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set leader
+let mapleader = "\\"
+
+" show commands as we type them
+"set showcmd
+
+" show the first match as search strings are typed
+set incsearch
+
+" highlight the search matches
+set hlsearch
+
+" searching is case insensitive when all lowercase
+set ignorecase smartcase
+
+" flip the default split directions to sane ones
+set splitright
+set splitbelow
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Management
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set temporary directory (don't litter local dir with swp/tmp files)
+set directory=~/tmp/
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+for f in split(glob('~/.vim/config/*.vim'), '\n')
+    exe 'source' f
+endfor
+
