@@ -11,7 +11,7 @@ source "$dotfiles/functions.sh"
 # source brew.sh
 source fonts.sh
 source git.sh
-source "$dotfiles/zsh.sh"
+source "$dotfiles/ssh.sh"
 
 # Programming
 source "$dotfiles/vim.sh"
