@@ -12,6 +12,8 @@ vim_plugin "vim-airline" "https://github.com/vim-airline/vim-airline.git"
 
 # Config
 ln -fs "$dotfiles/vim/vimrc" "$HOME/.vimrc"
-ln -fs "$dotfiles/vim/config" "$HOME/.vim/config"
-ln -fs "$dotfiles/vim/colors" "$HOME/.vim/colors"
+ln -fsn "$dotfiles/vim/config" "$HOME/.vim/config"
+ln -fsn "$dotfiles/vim/colors" "$HOME/.vim/colors"
 
+# Temp dir for macvim (specified in .vimrc)
+mkdir -p ~/tmp
