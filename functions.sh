@@ -41,12 +41,12 @@ function do_brew()
 
 function brew_package()
 {
-  do_brew "" $1
+  do_brew "" "$1"
 }
 
 function cask_package()
 {
-  do_brew cask $1
+  do_brew cask "$1"
 }
 
 # usage: git_repo $HOME/local/dir https://github.com/foo/bar.git
@@ -55,16 +55,24 @@ function git_repo()
   local filename=$(basename $1)
   printf "${BOLD}${BLUE}${filename}${NORMAL}... "
   if [ -d "$1" ]; then
-    printf "updating... "
-    git -C "$1" fetch --depth 1 > /dev/null
-    git -C "$1" reset --hard origin/master > /dev/null
+    local local_sha=$(git -C "$1" rev-parse HEAD)
+    local remote_sha=$(git ls-remote -hq "$2" | ag "refs\/heads\/master$" | cut -f1)
+    if [ $local_sha = $remote_sha ]; then
+      printf "already at latest version.\n"
+    else
+      printf "updating... "
+      # because of depth 1, a simple pull won't work. Git won't have history to know it's in the same path
+      # this gets the latest and hard resets so it just sets up with the latest version
+      git -C "$1" fetch --depth 1 > /dev/null
+      git -C "$1" reset --hard origin/master > /dev/null
+    fi
   else
     printf "cloning... "
     git clone --depth 1 "$2" "$1" > /dev/null
   fi
 }
 
-# usage: vim_plugin https://github.com/foo/bar.git plugin-name
+# usage: vim_plugin plugin-name https://github.com/foo/bar.git
 function vim_plugin()
 {
   local plugins_dir="$HOME/.vim/pack/my-plugins/start"

@@ -13,3 +13,4 @@ git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.hard "reset --hard"
 git config --global alias.amend "commit --amend"
+git config --global alias.force "push --force"

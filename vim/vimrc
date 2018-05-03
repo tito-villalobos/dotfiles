@@ -96,6 +96,6 @@ set directory=~/tmp/
 " Plugin Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 for f in split(glob('~/.vim/config/*.vim'), '\n')
-    exe 'source' f
+  exe 'source' f
 endfor
 

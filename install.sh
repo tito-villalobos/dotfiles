@@ -1,7 +1,9 @@
 #!/bin/bash
 source "$HOME/dotfiles/functions.sh"
 
-# source brew.sh
+source brew.sh
+brew_package the_silver_searcher
+
 source fonts.sh
 source git.sh
 source "$dotfiles/ssh.sh"

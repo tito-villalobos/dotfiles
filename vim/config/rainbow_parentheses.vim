@@ -18,3 +18,5 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 15
 autocmd Filetype clojure RainbowParenthesesActivate
 autocmd Syntax clojure RainbowParenthesesLoadRound
+
+nnoremap <leader>r :RainbowParenthesesToggle<cr>
