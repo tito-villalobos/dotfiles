@@ -1,12 +1,5 @@
 #!/bin/bash
-
-# exit if command fails
-set -o errexit
-# exit if unused variable is used
-set -o nounset
-
-dotfiles="$HOME/dotfiles"
-source "$dotfiles/functions.sh"
+source "$HOME/dotfiles/functions.sh"
 
 # source brew.sh
 source fonts.sh

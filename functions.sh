@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# exit if command fails
+set -o errexit
+# exit if unused variable is used
+set -o nounset
+
+dotfiles="$HOME/dotfiles"
+
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)

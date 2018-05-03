@@ -1,7 +1,10 @@
 #!/bin/bash
+if ! type -t brew_package; then
+  source "$HOME/dotfiles/functions.sh"
+fi
 
 brew_package zsh
-ln -fs "$dotfiles/zsh/zshrc" "$HOME/.zshrc"
+ln -sf "$dotfiles/zsh/zshrc" "$HOME/.zshrc"
 if ! echo $SHELL | grep "\/zsh$" > /dev/null ; then
   chsh -s zsh
 fi

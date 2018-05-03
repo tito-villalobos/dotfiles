@@ -1,4 +1,7 @@
 #!/bin/bash
+if ! type -t brew_package; then
+  source "$HOME/dotfiles/functions.sh"
+fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
   printf "Creating SSH Key:"

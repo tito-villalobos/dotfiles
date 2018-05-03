@@ -1,4 +1,7 @@
 #!/bin/bash
+if ! type -t brew_package; then
+  source "$HOME/dotfiles/functions.sh"
+fi
 
 # install brew
 printf "brew... "
