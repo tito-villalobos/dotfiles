@@ -13,6 +13,7 @@ source "$dotfiles/vim.sh"
 source "$dotfiles/ruby.sh"
 source "$dotfiles/clojure.sh"
 brew_package cloc
+cask_package docker-edge
 
 # Common Apps
 cask_package google-chrome
