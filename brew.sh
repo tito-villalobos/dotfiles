@@ -17,6 +17,6 @@ fi
 
 # install cask (GUI programs)
 brew tap caskroom/cask
-# beta/alt versions of some casks (i.e. docker-edge)
+# beta/alt versions of some casks (e.g. docker-edge, java8)
 brew tap caskroom/versions
 

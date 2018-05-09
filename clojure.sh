@@ -3,7 +3,8 @@ if ! type -t brew_package; then
   source "$HOME/dotfiles/functions.sh"
 fi
 
-cask_package java
+# clojure needs java 1.8.  It doesn't work with 1.9 or 1.10.
+cask_package java8
 brew_package clojure
 brew_package leiningen
 
