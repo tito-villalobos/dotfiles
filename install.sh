@@ -13,9 +13,14 @@ source "$dotfiles/vim.sh"
 source "$dotfiles/ruby.sh"
 source "$dotfiles/clojure.sh"
 brew_package cloc
+
+# command line json parser/formatter
+brew_package jq
+
+# Docker
 cask_package docker-edge
 
-# Common Apps
+# Desktop Apps
 cask_package google-chrome
 cask_package slack
 cask_package spectacle
