@@ -1,0 +1,90 @@
+require: rubocop-rspec
+
+AllCops:
+  UseCache: false
+  TargetRubyVersion: 2.5.0
+  Exclude:
+    - 'bin/*'
+    - 'tmp/**/*.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  Exclude:
+    - '**/bin/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/**/*_spec.rb'
+    - '**/*.gemspec'
+    - '**/spec/support/*.rb'
+    - '**/spec/support/shared_examples/*.rb'
+    - '**/spec/support/shared_contexts/*.rb'
+    - '**/config/initializers/*.rb'
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# This is useful for asserting things about errors and the specific contents of the error objects
+Style/MultilineBlockChain:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+# Requiring StandardError to be explicit conflicts with "catch and re-raise with annotations"
+Style/RescueStandardError:
+  Enabled: false
+
+# Testing framework is helpful with shared examples
+RSpec/NestedGroups:
+  Max: 5
+
+# Sometimes multiple expectations result in the clearest specs. We can revisit
+# this or make it more fine-grained if need be.
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# Allow `describe 'A Thing'` instead of forcing `describe AThing`, since sometimes it makes sense
+# RSpec/DescribeClass:
+#   Enabled: false
+
+# Controller specs are interactive
+# RSpec/ExampleLength:
+#   Max: 10
+#   Exclude:
+#     - 'spec/controllers/**/*_spec.rb'
+#     - 'spec/features/**/*_spec.rb'
+#     - 'spec/requests/**/*_spec.rb'
+
+# Sometimes allowing escaped slashes is easier to read than always requiring %r
+Style/RegexpLiteral:
+  Enabled: false
+
+# We often raise an exception that we need to explicitly construct
+Style/RaiseArgs:
+  Enabled: false
+
+# No need to require people to use special syntax for word arrays
+Style/WordArray:
+  Enabled: false
+
+# this is useful sometimes
+Style/DoubleNegation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+

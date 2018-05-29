@@ -19,6 +19,7 @@ brew_package jq
 
 # Docker
 cask_package docker-edge
+cask_package kitematic
 
 # Desktop Apps
 cask_package google-chrome
