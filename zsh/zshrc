@@ -17,6 +17,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Docker
+alias dup='docker-compose up -d'
+alias dupb='docker-compose up -d --build'
+alias ddown='docker-compose down'
+alias dd='docker-compose down'
+
 # Vault autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
