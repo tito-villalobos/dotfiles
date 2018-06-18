@@ -18,10 +18,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Docker
-alias dup='docker-compose up -d'
-alias dupb='docker-compose up -d --build'
-alias ddown='docker-compose down'
-alias dd='docker-compose down'
+alias dup='docker-compose up --detach'
+alias dupb='docker-compose up --detach --build'
+alias ddown='docker-compose down --volumes'
+alias dd='docker-compose down --volumes'
+alias dclean='docker volume rm `docker volume ls -q -f dangling=true`'
 
 # Vault autocomplete
 autoload -U +X bashcompinit && bashcompinit
