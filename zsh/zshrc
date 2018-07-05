@@ -22,7 +22,14 @@ alias dup='docker-compose up --detach'
 alias dupb='docker-compose up --detach --build'
 alias ddown='docker-compose down --volumes'
 alias dd='docker-compose down --volumes'
-alias dclean='docker volume rm `docker volume ls -q -f dangling=true`'
+alias dcleanv='docker volume rm $(docker volume ls -q --filter=dangling=true)'
+alias dcleani='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias dcleanc='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+alias dclean='dcleanv; dcleani'
+alias dkill='docker kill $(docker ps -q)'
+alias docker-reset-containers='docker rm -f $(docker ps -a -q)'
+alias docker-reset-images='docker rmi -f $(docker images -q)'
+alias docker-reset='docker-reset-containers; docker-reset-images'
 
 # Vault autocomplete
 autoload -U +X bashcompinit && bashcompinit

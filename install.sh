@@ -12,10 +12,14 @@ source "$dotfiles/ssh.sh"
 source "$dotfiles/vim.sh"
 source "$dotfiles/ruby.sh"
 source "$dotfiles/clojure.sh"
-brew_package cloc
 
-# command line json parser/formatter
+# command line dev utils
+# line counting
+brew_package cloc
+# json parser/formatter
 brew_package jq
+# way better curl
+brew_package httpie
 
 # Docker
 cask_package docker-edge
