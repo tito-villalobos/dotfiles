@@ -34,6 +34,9 @@ alias docker-reset-containers='docker rm -f $(docker ps -a -q)'
 alias docker-reset-images='docker rmi -f $(docker images -q)'
 alias docker-reset='docker-reset-containers; docker-reset-images'
 
+# Clojure
+alias lt='lein run -m circleci.test'
+
 # Vault autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
