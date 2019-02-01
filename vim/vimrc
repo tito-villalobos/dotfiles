@@ -19,8 +19,8 @@ filetype indent on
 " Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
-" JSON is JS
-au BufNewFile,BufRead *.json set ai filetype=javascript 
+" HCL is JSON
+au BufNewFile,BufRead *.hcl set ai filetype=json
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
@@ -90,7 +90,7 @@ set splitbelow
 " File Management
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set temporary directory (don't litter local dir with swp/tmp files)
-set directory=~/tmp/
+set directory=~/.vim-swap/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configuration

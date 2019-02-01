@@ -2,3 +2,18 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
+
+UseRoaming no
+
+Host jumphost-base.prod.circleci.com
+  # Devs should set User as "circle"
+  User circle
+  # Update with /path/to/your/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa
+
+# For K8 <3
+Host kube-kubectl-us-east-1-b.infra.circleci.com
+ User core
+ StrictHostkeyChecking no
+ IdentityFile ~/.ssh/id_rsa_cci
+ ProxyCommand ssh -q -W %h:%p jumphost-base.prod.circleci.com

@@ -15,24 +15,10 @@ plugins=(
   lein
 )
 
-source $ZSH/oh-my-zsh.sh
-
-# Docker
-alias dup='docker-compose up --detach'
-alias dupb='docker-compose up --detach --build'
-alias ddown='docker-compose down --volumes'
-alias dd='docker-compose down --volumes'
-alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dlog='docker logs'
-alias dcleanv='docker volume rm $(docker volume ls -q --filter=dangling=true)'
-alias dcleani='docker rmi $(docker images -a --filter=dangling=true -q)'
-alias dcleanc='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-alias dclean='dcleanv; dcleani'
-alias dkill='docker kill $(docker ps -q)'
-alias docker-reset-containers='docker rm -f $(docker ps -a -q)'
-alias docker-reset-images='docker rmi -f $(docker images -q)'
-alias docker-reset='docker-reset-containers; docker-reset-images'
+source "$ZSH/oh-my-zsh.sh"
+source "$HOME/dotfiles/docker/aliases.sh"
+source "$HOME/dotfiles/git/aliases.sh"
+source "$HOME/dotfiles/ruby/rbenv-init.sh"
 
 # Clojure
 alias lt='lein run -m circleci.test'
@@ -41,7 +27,8 @@ alias lt='lein run -m circleci.test'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 
-# Must be at the end of the file
+# History and syntax highlighting
+# Must be at the end of the zshrc
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

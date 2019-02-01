@@ -10,7 +10,6 @@ vim_plugin "nerdtree" "https://github.com/scrooloose/nerdtree.git"
 vim_plugin "nerdtree-git-plugin" "https://github.com/Xuyuanp/nerdtree-git-plugin.git"
 vim_plugin "ack_vim" "https://github.com/mileszs/ack.vim.git"
 vim_plugin "ctrlp" "https://github.com/ctrlpvim/ctrlp.vim.git"
-#vim_plugin "ale" "https://github.com/w0rp/ale.git"
 vim_plugin "vim-airline" "https://github.com/vim-airline/vim-airline.git"
 vim_plugin "tcomment" "https://github.com/tomtom/tcomment_vim"
 
