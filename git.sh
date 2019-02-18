@@ -16,3 +16,12 @@ git config --global alias.amend "commit --amend"
 git config --global alias.force "push --force"
 git config --global alias.dh "diff HEAD"
 git config --global alias.sha "rev-parse HEAD"
+
+
+# From oh-my-zsh's git plugin: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+# Putting these here because it's the most likely place I'll look for them
+# gco     git checkout
+# gp      git push
+# gpsup   git push --set-upstream origin $(current_branch)
+# gst     git status
+alias git branch | grep -v "master" | xargs git branch -D

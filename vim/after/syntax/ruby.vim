@@ -1,4 +1,4 @@
-" Highlight attr_extras gem like attr_reader & attr_writer
+" Highlight attr_extras defined keywords
 syn keyword rubyAttribute attr_initialize
 syn keyword rubyAttribute attr_private
 syn keyword rubyAttribute attr_value
@@ -10,3 +10,7 @@ syn keyword rubyAttribute attr_implement
 syn keyword rubyAttribute cattr_implement
 syn keyword rubyAttribute attr_query
 syn keyword rubyAttribute attr_id_query
+
+" Highlight my custom attr keywords
+syn keyword rubyAttribute attr_memoize
+
