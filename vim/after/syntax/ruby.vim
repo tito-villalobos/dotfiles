@@ -13,4 +13,4 @@ syn keyword rubyAttribute attr_id_query
 
 " Highlight my custom attr keywords
 syn keyword rubyAttribute attr_memoize
-
+syn keyword rubyAttribute class_attr_memoize

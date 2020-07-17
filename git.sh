@@ -24,4 +24,3 @@ git config --global alias.sha "rev-parse HEAD"
 # gp      git push
 # gpsup   git push --set-upstream origin $(current_branch)
 # gst     git status
-alias git branch | grep -v "master" | xargs git branch -D

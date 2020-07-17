@@ -16,12 +16,13 @@ plugins=(
 )
 
 source "$ZSH/oh-my-zsh.sh"
+source "$HOME/dotfiles/brew/aliases.sh"
 source "$HOME/dotfiles/docker/aliases.sh"
 source "$HOME/dotfiles/git/aliases.sh"
-source "$HOME/dotfiles/ruby/rbenv-init.sh"
+source "$HOME/dotfiles/terraform/aliases.sh"
+source "$HOME/dotfiles/java/aliases.sh"
 
-# Clojure
-alias lt='lein run -m circleci.test'
+source "$HOME/dotfiles/ruby/rbenv-init.sh"
 
 # Vault autocomplete
 autoload -U +X bashcompinit && bashcompinit

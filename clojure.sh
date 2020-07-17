@@ -9,7 +9,8 @@ brew_package clojure
 brew_package leiningen
 
 # Config
-ln -sf "$dotfiles/lein/profiles.clj" "$HOME/.lein/profiles.clj"
+mkdir "$HOME/.lein"
+ln -sf "$dotfiles/clojure/lein/profiles.clj" "$HOME/.lein/profiles.clj"
 
 # vim plugins
 vim_plugin "vim-clojure-static" "https://github.com/guns/vim-clojure-static.git"
