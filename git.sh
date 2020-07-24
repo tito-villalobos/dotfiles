@@ -16,6 +16,10 @@ git config --global alias.amend "commit --amend"
 git config --global alias.force "push --force"
 git config --global alias.dh "diff HEAD"
 git config --global alias.sha "rev-parse HEAD"
+git config --global alias.pff "pull --fast-forward"
+git config --global alias.pmerge "pull --no-rebase"
+git config --global alias.prebase "pull --rebase"
+
 
 
 # From oh-my-zsh's git plugin: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
