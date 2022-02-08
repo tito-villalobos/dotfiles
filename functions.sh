@@ -26,13 +26,13 @@ UNDERLINE=$(tput smul)
 function do_brew()
 {
   printf "${BOLD}${BLUE}${2}${NORMAL}... "
-  if brew $1 info "$2" | grep "Not installed" > /dev/null; then
+  if brew info $1 "$2" | grep "Not installed" > /dev/null; then
     printf "installing... "
-    brew $1 install "$2" > /dev/null
+    brew install $1 "$2" > /dev/null
     printf "done.\n"
-  elif brew $1 outdated | grep "$2" > /dev/null; then
+  elif brew outdated $1 | grep "$2" > /dev/null; then
     printf "upgrading... "
-    brew $1 upgrade "$2" > /dev/null
+    brew upgrade $1 "$2" > /dev/null
     printf "done.\n"
   else
     printf "already at latest version.\n"
@@ -46,7 +46,7 @@ function brew_package()
 
 function cask_package()
 {
-  do_brew cask "$1"
+  do_brew --cask "$1"
 }
 
 # usage: git_repo $HOME/local/dir https://github.com/foo/bar.git

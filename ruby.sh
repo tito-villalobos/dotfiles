@@ -4,7 +4,7 @@ if ! type -t brew_package; then
 fi
 
 brew_package rbenv
-rbenv install -s 2.7.1
+rbenv install -s 3.1.0
 
 # Vim plugins
 vim_plugin "vim-ruby" "https://github.com/vim-ruby/vim-ruby.git"

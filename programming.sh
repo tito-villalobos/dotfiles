@@ -18,7 +18,7 @@ brew_package httpie
 source "$dotfiles/git.sh"
 source "$dotfiles/vim.sh"
 source "$dotfiles/ruby.sh"
-source "$dotfiles/clojure.sh"
+#source "$dotfiles/clojure.sh"
 source "$dotfiles/docker.sh"
 source "$dotfiles/terraform.sh"
 
