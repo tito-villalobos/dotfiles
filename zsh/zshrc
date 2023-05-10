@@ -12,24 +12,29 @@ plugins=(
   thor
   bundler
   rails
-  lein
 )
 
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/dotfiles/brew/aliases.sh"
 source "$HOME/dotfiles/docker/aliases.sh"
 source "$HOME/dotfiles/git/aliases.sh"
+source "$HOME/dotfiles/dotnet/aliases.sh"
 #source "$HOME/dotfiles/terraform/aliases.sh"
 #source "$HOME/dotfiles/java/aliases.sh"
 
 source "$HOME/dotfiles/ruby/rbenv-init.sh"
 
 # Vault autocomplete
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/vault vault
+
+# Add .NET Core SDK tools
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # History and syntax highlighting
 # Must be at the end of the zshrc
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/vault vault

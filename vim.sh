@@ -12,6 +12,7 @@ vim_plugin "ack_vim" "https://github.com/mileszs/ack.vim.git"
 vim_plugin "ctrlp" "https://github.com/ctrlpvim/ctrlp.vim.git"
 vim_plugin "vim-airline" "https://github.com/vim-airline/vim-airline.git"
 vim_plugin "tcomment" "https://github.com/tomtom/tcomment_vim"
+vim_plugin "vim-polyglot" "https://github.com/sheerun/vim-polyglot"
 
 # dir for macvim (specified in .vimrc)
 mkdir -p ~/.vim-swap
